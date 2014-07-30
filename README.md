@@ -1,15 +1,16 @@
 #Docker PAM workaround
 
-## Build the image
-
-```
-docker build --rm -t pam .
-```
-
 ## Pull the image
 
 ```
 docker pull sequenceiq/pam
+```
+Alternatively you can build the image from the Dockerfile from our [GitHub repository](https://github.com/sequenceiq/docker-pam)
+
+## Build the image
+
+```
+docker build --rm -t pam .
 ```
 
 ## Test the image
