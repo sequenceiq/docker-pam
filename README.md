@@ -1,17 +1,23 @@
 #Docker PAM workaround
 
-# Build the image
+## Build the image
 
 ```
-docker build --rm -t pam-test .
+docker build --rm -t pam .
 ```
 
-# Test the image
-
-Test with CentOS container with patched PAM 
+## Pull the image
 
 ```
-docker run -i -t --net=host pam-test /bin/bash -c "useradd testuser; su testuser"
+docker pull sequenceiq/pam
+```
+
+## Test the image
+
+Test with CentOS container as guest OS with patched PAM 
+
+```
+docker run -i -t --net=host pam /bin/bash -c "useradd testuser; su testuser"
 
 #Output shall look like this:
 vagrant@vagrant-ubuntu-trusty-64:~/docker-pam$ sudo docker run -i -t --net=host pam_test /bin/bash -c "useradd testuser; su testuser"
@@ -19,7 +25,7 @@ vagrant@vagrant-ubuntu-trusty-64:~/docker-pam$ sudo docker run -i -t --net=host 
 
 ```
 
-Test with CentOS container without patched PAM 
+Test with CentOS container as guest OS without patched PAM 
 
 ```
 docker run -i -t --net=host tianon/centos:6.5 /bin/bash -c "useradd testuser; su testuser"
