@@ -1,0 +1,29 @@
+[base-source]
+name=CentOS-$releasever - Base Source
+baseurl=http://vault.centos.org/centos/$releasever/os/Source/
+enabled=0
+ 
+[updates-source]
+name=CentOS-$releasever - Updates Source
+baseurl=http://vault.centos.org/centos/$releasever/updates/Source/
+enabled=0
+ 
+[addons-source]
+name=CentOS-$releasever - Addons Source
+baseurl=http://vault.centos.org/centos/$releasever/addons/Source/
+enabled=0
+ 
+[extras-source]
+name=CentOS-$releasever - Extras Source
+baseurl=http://vault.centos.org/centos/$releasever/extras/Source/
+enabled=0
+ 
+[centosplus-source]
+name=CentOS-$releasever - Plus Source
+baseurl=http://vault.centos.org/centos/$releasever/centosplus/Source/
+enabled=0
+ 
+[contrib-source]
+name=CentOS-$releasever - Contrib Source
+baseurl=http://vault.centos.org/centos/$releasever/contrib/Source/
+enabled=0
