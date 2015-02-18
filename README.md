@@ -31,21 +31,13 @@ docker build --rm -t pam_ubuntu .
 ### Test the image
 
 ```
-docker run -i -t --net=host pam /bin/bash -c "useradd testuser; su testuser"
-```
-```
-**Output will look like this:**
-vagrant@vagrant-ubuntu-trusty-64:~/docker-pam$ sudo docker run -i -t --net=host sequenceiq/pam:centos-6.5 /bin/bash -c "useradd testuser; su testuser"
-[testuser@vagrant-ubuntu-trusty-64 /]
+$ sudo docker run -i -t --net=host sequenceiq/pam:centos-6.5 /bin/bash -c "useradd testuser; su testuser"
+$
 ```
 
 As reference you can try the original CentOS 6.5 container as guest OS without patched PAM
 
 ```
-docker run -i -t --net=host tianon/centos:6.5 /bin/bash -c "useradd testuser; su testuser"
-```
-```
-**Output will look like this:**
-vagrant@vagrant-ubuntu-trusty-64:~/docker-pam$ sudo docker run -i -t --net=host tianon/centos:6.5 /bin/bash -c "useradd testuser; su testuser"
-su: incorrect password
+$ sudo docker run -i -t --net=host tianon/centos:6.5 /bin/bash -c "useradd testuser; su testuser"
+$ su: incorrect password
 ```

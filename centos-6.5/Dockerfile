@@ -3,6 +3,8 @@ MAINTAINER SequenceIQ
 
 ADD Centos-Source.repo /etc/yum.repos.d/Centos-Source.repo
 
+RUN yum update -y
+
 RUN yum install -y tar bzip2 yum-utils rpm-build
 
 RUN yum-builddep -y pam
